@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "9673785582",
+    "project_id": "primary-fire",
+    "storage_bucket": "primary-fire.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9673785582:android:ca53df386782ca694b73ff",
+        "android_client_info": {
+          "package_name": "com.example.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyQZWUhBAuHpoMUSsictBLVahE_gYZttM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
