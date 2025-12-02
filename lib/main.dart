@@ -2,10 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'firebase_options_second.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp(
+    name: 'secondary',
+    options: SecondFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -52,14 +57,38 @@ class DemoPage extends StatelessWidget {
           FilledButton(
             onPressed: () async {
               try {
+                // Write to FIRST Firebase project
                 await FirebaseFirestore.instance.collection('demo').add({
+                  'source': 'PRIMARY',
                   'timestamp': FieldValue.serverTimestamp(),
                 });
               } catch (e) {
-                print('Error adding document: $e');
+                print('Error adding document to PRIMARY: $e');
               }
             },
-            child: Text('Put to Fire'),
+            child: Text('Write to PRIMARY Firebase'),
+          ),
+
+          const SizedBox(height: 20),
+
+          FilledButton(
+            onPressed: () async {
+              try {
+                // Get SECONDARY Firestore
+                final secondaryFirestore = FirebaseFirestore.instanceFor(
+                  app: Firebase.app('secondary'),
+                );
+
+                // Write to SECOND Firebase project
+                await secondaryFirestore.collection('demo').add({
+                  'source': 'SECONDARY',
+                  'timestamp': FieldValue.serverTimestamp(),
+                });
+              } catch (e) {
+                print('Error adding document to SECONDARY: $e');
+              }
+            },
+            child: Text('Write to SECONDARY Firebase'),
           ),
         ],
       ),

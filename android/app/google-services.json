@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "9673785582",
-    "project_id": "primary-fire",
-    "storage_bucket": "primary-fire.firebasestorage.app"
+    "project_number": "641880302628",
+    "project_id": "sec-fire",
+    "storage_bucket": "sec-fire.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:9673785582:android:ca53df386782ca694b73ff",
+        "mobilesdk_app_id": "1:641880302628:android:03ca96b048d9ee626ea4b1",
         "android_client_info": {
           "package_name": "com.example.demo"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCyQZWUhBAuHpoMUSsictBLVahE_gYZttM"
+          "current_key": "AIzaSyCE0_1R5faSE0BGU1SffrdS35ddb1X4HyI"
         }
       ],
       "services": {
